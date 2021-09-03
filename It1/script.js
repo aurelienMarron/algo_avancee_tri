@@ -1,6 +1,6 @@
 let numbers = [3, 9, 7, 1, 6, 2, 8, 4, 5];
 
-console.log(numbers)
+ console.log(numbers)
 
 //premiere méthode
 let i = 0;
