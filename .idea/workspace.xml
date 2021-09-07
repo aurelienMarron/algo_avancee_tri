@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecd7e66f-d8dc-48a2-8eef-1a76005b772b" name="Default Changelist" comment="Tri fait jusqu'à la fusion">
+    <list default="true" id="ecd7e66f-d8dc-48a2-8eef-1a76005b772b" name="Default Changelist" comment="Tri par tas ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/It1/implementation/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/It1/implementation/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tri_ville_algo/jsSortAlgoAdvanced-" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,7 +47,8 @@
       <option name="presentableId" value="Default" />
       <updated>1630655228795</updated>
       <workItem from="1630655230545" duration="17898000" />
-      <workItem from="1630911912093" duration="21595000" />
+      <workItem from="1630911912093" duration="21876000" />
+      <workItem from="1630997963263" duration="6613000" />
     </task>
     <task id="LOCAL-00001" summary="Premier commit avec le tri ok">
       <created>1630661741451</created>
@@ -76,7 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1630680942528</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tri par tas en cours">
+      <created>1630940200095</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1630940200095</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tri par tas ok">
+      <created>1631001663544</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631001663544</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +115,8 @@
     <MESSAGE value="Nouvel implementation" />
     <MESSAGE value="Nouvel implementation ok" />
     <MESSAGE value="Tri fait jusqu'à la fusion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tri fait jusqu'à la fusion" />
+    <MESSAGE value="Tri par tas en cours" />
+    <MESSAGE value="Tri par tas ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tri par tas ok" />
   </component>
 </project>

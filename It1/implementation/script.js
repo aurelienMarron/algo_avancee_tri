@@ -8,22 +8,25 @@ function swap(tableau, x, y) {
 
 //tri par insertion
 
-function triParInsertion() {
-    let tab = [3, 9, 7, 1, 6, 2, 8, 4, 5]
+function triParInsertion(tab) {
+
     let temp
     let i
     let j
-    for (i = 1; i < tab.length; i++) {
-        temp = tab[i];
-        for (j = i; j > 0 && tab[j - 1] > temp; j--) {
-            tab[j] = tab[j - 1];
-        }
-        tab[j] = temp;
-    }
-    console.log("tri par insertion: " + tab)
-}
 
-triParInsertion();
+    for(let i=0; i<tab.length;i++){
+        temp=tab[i];
+        j=i;
+        while(j>0 && tab[j-1]>temp){
+            swap(tab,j,j-1)
+            j=j-1;
+        }
+        tab[j]=temp;
+    }
+}
+let tab = [3, 9, 7, 1, 6, 2, 8, 4, 5]
+triParInsertion(tab);
+console.log(tab)
 
 //tri par sélection
 
@@ -98,33 +101,33 @@ function tri_fusion(tableau) {
 
 }
 
-let tab = [3, 9, 7, 1, 6, 2, 8, 4, 5];
+// let tab = [3, 9, 7, 1, 6, 2, 8, 4, 5];
 console.log("Tri par fusion: " + tri_fusion(tab))
 
 //1
-function tri_Rapide(tableau,  premier,  dernier) {
+function tri_Rapide(tableau, premier, dernier) {
     if (premier < dernier) {
-       let pi = partitionner(tableau, premier,dernier)
-         tri_Rapide(tableau, premier, pi - 1)
-         tri_Rapide(tableau, pi + 1, dernier)
+        let pi = partitionner(tableau, premier, dernier)
+        tri_Rapide(tableau, premier, pi - 1)
+        tri_Rapide(tableau, pi + 1, dernier)
     }
-    }
+}
 
 function partitionner(tableau, premier, dernier) {
     let temp;
-    let pivot=dernier;
-    let j=premier;
+    let pivot = dernier;
+    let j = premier;
     for (let i = premier; i < dernier; i++) {
         if (tableau[i] <= tableau[pivot]) {
-            tableau=swap(tableau,i,j)
-            j=j+1;
+            tableau = swap(tableau, i, j)
+            j = j + 1;
         }
     }
-    tableau=swap(tableau,dernier,j)
+    tableau = swap(tableau, dernier, j)
     return j;
 }
 
-tri_Rapide(tab,0,tab.length-1)
+tri_Rapide(tab, 0, tab.length - 1)
 console.log("Tri rapide : " + tab)
 
 // function quickSort(tableau){
@@ -142,57 +145,57 @@ console.log("Tri rapide : " + tab)
 
 //Tri de Shell
 // let tab = [3, 9, 7, 1, 6, 2, 8, 4, 5];
- function tri_shell(tableau){
-    let longueur=tableau.length;
-   let n=0;
-   while(n<longueur){
-       n=(3*n+1)
-   }
-   while(n!=0){
-       n=Math.floor(n/3)
-       for(let i=n;i<longueur;i++){
-           let valeur=tableau[i];
-           let j=i;
-           while(j>n-1 && tableau[j-n]>valeur){
-               tableau[j]=tableau[j-n]
-               j=j-n
-           }
-           tableau[j]=valeur
-       }
-   }
- }
-let tab2 = [3, 9, 7, 1, 6, 2, 8, 4, 5];
- tri_shell(tab2);
- console.log("tri shell : " + tab2)
-
-
-
-//tri par tas
-function triParTas(tableau){
-     organiser(tableau);
-    for(let i=tableau.length-1;i!=0;i--){
-        swap(tableau,0,i);
-        redescendre(tableau,i,0);
+function tri_shell(tableau) {
+    let longueur = tableau.length;
+    let n = 0;
+    while (n < longueur) {
+        n = (3 * n + 1)
+    }
+    while (n != 0) {
+        n = Math.floor(n / 3)
+        for (let i = n; i < longueur; i++) {
+            let valeur = tableau[i];
+            let j = i;
+            while (j > n - 1 && tableau[j - n] > valeur) {
+                tableau[j] = tableau[j - n]
+                j = j - n
+            }
+            tableau[j] = valeur
+        }
     }
 }
 
-function organiser(tableau){
-     for(let i=0; i<tableau.length-1;i++){
-         remonter(tableau,i)
-     }
+let tab2 = [3, 9, 7, 1, 6, 2, 8, 4, 5];
+tri_shell(tab2);
+console.log("tri shell : " + tab2)
+
+
+//tri par tas
+function triParTas(tableau) {
+    organiser(tableau);
+    for (let i = tableau.length - 1; i != 0; i--) {
+        swap(tableau, 0, i);
+        redescendre(tableau, i, 0);
+    }
 }
 
-function remonter(tableau,index){
-     if (tableau[index]>tableau[Math.floor(index/2)]){
-        swap(tableau,index,Math.floor(index/2));
-         remonter (tableau,Math.floor(index/2));
-     }
+function organiser(tableau) {
+    for (let i = 0; i < tableau.length - 1; i++) {
+        remonter(tableau, i)
+    }
 }
 
-function redescendre(tableau,element,index){
-     let max
-     let formule=2*index+1
-    if(formule<element) {
+function remonter(tableau, index) {
+    if (tableau[index] > tableau[Math.floor(index / 2)]) {
+        swap(tableau, index, Math.floor(index / 2));
+        remonter(tableau, Math.floor(index / 2));
+    }
+}
+
+function redescendre(tableau, element, index) {
+    let max
+    let formule = 2 * index + 1
+    if (formule < element) {
         if (tableau[formule] > tableau[2 * index]) {
             max = formule;
         } else {
@@ -206,5 +209,5 @@ function redescendre(tableau,element,index){
 }
 
 let tab3 = [3, 9, 7, 1, 6, 2, 8, 4, 5];
- triParTas(tab3);
- console.log("tri par tas: " + tab3)
+triParTas(tab3);
+console.log("tri par tas: " + tab3)
