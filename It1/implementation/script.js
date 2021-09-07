@@ -170,8 +170,8 @@ let tab2 = [3, 9, 7, 1, 6, 2, 8, 4, 5];
 //tri par tas
 function triParTas(tableau){
      organiser(tableau);
-    for(let i=tableau.length-1;i>0;i--){
-        tableau=swap(tableau,i,0);
+    for(let i=tableau.length-1;i!=0;i--){
+        swap(tableau,0,i);
         redescendre(tableau,i,0);
     }
 }
@@ -183,24 +183,25 @@ function organiser(tableau){
 }
 
 function remonter(tableau,index){
-     if (tableau[index]>tableau[index/2]){
-         tableau=swap(tableau,index,index/2);
-         remonter (tableau,index/2);
+     if (tableau[index]>tableau[Math.floor(index/2)]){
+        swap(tableau,index,Math.floor(index/2));
+         remonter (tableau,Math.floor(index/2));
      }
 }
 
 function redescendre(tableau,element,index){
      let max
      let formule=2*index+1
-    if(formule<element){
-        if (tableau[formule]>tableau[2*index]){
-             max=formule;
-        }else{
-             max=2*index
+    if(formule<element) {
+        if (tableau[formule] > tableau[2 * index]) {
+            max = formule;
+        } else {
+            max = 2 * index
         }
-    }else if(tableau[max]>tableau[index]){
-        tableau=swap(tableau,max,index)
-        redescendre(tableau,element,max)
+        if (tableau[max] > tableau[index]) {
+            tableau = swap(tableau, max, index)
+            redescendre(tableau, element, max)
+        }
     }
 }
 
